@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    /*    Задание3 index3.html
+        Разработайте сценарий, который каждую секунду будет случайным 
+        образом менять положение 3 элементов div.Задайте элементам
+        фиксированную ширину и высоту и запустите сценарий при 
+        загрузке страницы.*/
+    </script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        #div1{
+            background-color: chartreuse;
+        }
+        #div2{
+            background-color: chocolate;
+        }
+        #div3{
+            background-color: dodgerblue;
+        }
+    </style>
+    <script>
+    window.onload = function(){
+            function getRandomInRange(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function animate(){
+                for(var i = 0; i < divs.length; i++){
+                    var x = getRandomInRange(1, 300);
+                    var y = getRandomInRange(1, 300)
+                    divs[i].style.left = x + "px" ;
+                    divs[i].style.top = y + "px" ;
+                }
+            }
+            
+
+            var divs = document.getElementsByTagName("div");    
+            setInterval(animate, 100);
+
+            }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>

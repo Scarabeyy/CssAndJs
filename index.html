@@ -5,8 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script>/*
+    Задание1  index.html
+    Разработайте игру "Угадай значение".Страницу загадывает
+    число от 1 до 100. Пользователь в поле ввода вводит значение
+    пытаясь угадать загаданное число. Если пользователь  не 
+    угадает значение, страницу выводит сообщение с 
+    текстом "загаданное значение больше введенного вами"
+    или "загаданное значение меньше введенного" Подумайте,
+    как можно применить DHTML в таком приложении.
+
+    Задание2 index2.html
+    Создайте страницу для авторизации.На страницы должны 
+    находиться поля вводов для логина и пароля кнопка "Вход"
+    и chekbox "Запомнить меня".С помощью CSS, который распо
+    ложен в отдельном файле, выровнйте форму для 
+    авторизации по центру страницы. Разработайте сценарий
+    который будет срабатывать по нажатию на кнопку "Вход"ю
+    Сценарий должен реализовать следующиее поведение:
+        -Если при нажатии на кнопку поля ввода пустые -
+         выводится сообщеие (в теле страницы ,не через alert)
+         "Вы не заполнили поля логин  и пароль". Так-же поля 
+         вводов должны получить красный фон.
+        -Есди введен логин admin и пароль 12345 то отобразить 
+        пользователю сообщение зеленым цветом "Вы авторизованы".
+
+    Задание3 index3.html
+    Разработайте сценарий, который каждую секунду будет случайным 
+    образом менять положение 3 элементов div.Задайте элементам
+    фиксированную ширину и высоту и запустите сценарий при 
+    загрузке страницы.
+    
+    Задание4 index4.html
+    Разработайте страницу, разместите на ней 4 кнопки "вверх"
+    "Вниз""влево""вправо".Поместите на странице div c текстом.
+    при нажатии на кнопки должна запусткаться анимация которая
+    перемещает div на 100px в соответствующих направлениях.
+
+    */</script>
+    <style>
+        .class1{
+            color: green;
+        }
+        .class2{
+            color: red;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            function getRandomInRange(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            var num = getRandomInRange(1,100);
+            document.getElementById("test").innerHTML = num;
+            var input = document.getElementById("input");
+            var output = document.getElementById("output");
+            input.onchange = function(){
+                if(input.value == num){
+                    output.className = "class1"
+                    output.innerHTML = "Succes"
+                }
+                if(input.value < num){
+                    output.className = "class2"
+                    output.innerHTML = "More"
+                }
+                if(input.value > num){
+                    output.className = "class2"
+                    output.innerHTML = "Less"
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-    
+    <input type="text" id="input">
+    <p id="output"></p>
+    <p id="test"></p>
 </body>
 </html>

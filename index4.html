@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    /*    Задание4 index4.html
+            Разработайте страницу, разместите на ней 4 кнопки "вверх"
+            "Вниз""влево""вправо".Поместите на странице div c текстом.
+            при нажатии на кнопки должна запусткаться анимация которая
+            перемещает div на 100px в соответствующих направлениях.*/
+    </script>
+    <style>
+        #robot{
+            background-color: darkslateblue;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            margin-left: 500px;
+            margin-top: 500px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var up = document.getElementById("up");
+            var down = document.getElementById("down");
+            var left = document.getElementById("left");
+            var right = document.getElementById("right");
+
+            var robot = document.getElementById("robot")
+
+            var positionX = 0;
+            var positionY = 0;
+
+            var timer;
+
+            up.onclick = function(){
+                positionY = positionY -100;
+                robot.style.top = positionY + "px";
+                if(positionY == -500){
+                    up.setAttribute('disabled','disabled');
+                }
+            }
+            down.onclick = function(){
+                positionY = positionY + 100;
+                robot.style.top = positionY + "px";
+                if(positionY == 500){
+                    down.setAttribute('disabled','disabled');
+                }
+            }
+            left.onclick = function(){
+                positionX = positionX -100;
+                robot.style.left = positionX + "px";
+                if(positionX == -500){
+                    left.setAttribute('disabled','disabled');
+                }
+            }
+            right.onclick = function(){
+                positionX = positionX + 100;
+                robot.style.left = positionX + "px";
+                if(positionX == 500){
+                    right.setAttribute('disabled','disabled');
+                }
+            }                        
+        }
+    </script>
+</head>
+<body>
+    <div class="flex">
+        <input type="button" value="Up" id="up">
+        <input type="button" value="Down" id="down">
+        <input type="button" value="Left" id="left">
+        <input type="button" value="Right" id="right">
+    </div>
+    <div id="robot"></div>
+</body>
+</html>
