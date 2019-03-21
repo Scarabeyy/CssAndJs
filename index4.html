@@ -40,28 +40,24 @@
                 positionY = positionY -100;
                 robot.style.top = positionY + "px";
                 if(positionY == -500){
-                    up.setAttribute('disabled','disabled');
                 }
             }
             down.onclick = function(){
                 positionY = positionY + 100;
                 robot.style.top = positionY + "px";
                 if(positionY == 500){
-                    down.setAttribute('disabled','disabled');
                 }
             }
             left.onclick = function(){
                 positionX = positionX -100;
                 robot.style.left = positionX + "px";
                 if(positionX == -500){
-                    left.setAttribute('disabled','disabled');
                 }
             }
             right.onclick = function(){
                 positionX = positionX + 100;
                 robot.style.left = positionX + "px";
-                if(positionX == 500){
-                    right.setAttribute('disabled','disabled');
+                if(positionX == 500){       
                 }
             }                        
         }

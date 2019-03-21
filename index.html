@@ -60,7 +60,7 @@
             document.getElementById("test").innerHTML = num;
             var input = document.getElementById("input");
             var output = document.getElementById("output");
-            input.onchange = function(){
+            input.oninput = function(){
                 if(input.value == num){
                     output.className = "class1"
                     output.innerHTML = "Succes"
