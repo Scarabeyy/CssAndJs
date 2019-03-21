@@ -61,18 +61,35 @@
             var input = document.getElementById("input");
             var output = document.getElementById("output");
             input.oninput = function(){
-                if(input.value == num){
-                    output.className = "class1"
-                    output.innerHTML = "Succes"
+                switch(input.value == num){
+                    case true :
+                    output.className = "class1";
+                    output.innerHTML = "Succes";
+                    break;
+                    
+                    case false : 
+                    if(input.value < num){
+                        output.className = "class2"
+                        output.innerHTML = "More"
+                    }
+                     if(input.value > num){
+                        output.className = "class2"
+                        output.innerHTML = "Less" 
+                     }                   
+                    break;
                 }
-                if(input.value < num){
-                    output.className = "class2"
-                    output.innerHTML = "More"
-                }
-                if(input.value > num){
-                    output.className = "class2"
-                    output.innerHTML = "Less"
-                }
+                // if(input.value == num){
+                //     output.className = "class1"
+                //     output.innerHTML = "Succes"
+                // }
+                // if(input.value < num){
+                //     output.className = "class2"
+                //     output.innerHTML = "More"
+                // }
+                // if(input.value > num){
+                //     output.className = "class2"
+                //     output.innerHTML = "Less"
+                // }
             }
         }
     </script>

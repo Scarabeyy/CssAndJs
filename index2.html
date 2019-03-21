@@ -31,30 +31,47 @@
             var decline = document.getElementById("dec");
 
             btn.onclick = function(){
-                if(log.value != "admin" && pas.value != "12345"){
-                    log.style.backgroundColor = "red";
-                    pas.style.backgroundColor = "red";
 
-                    decline.style.display = "block"
-                }
-                else if(log.value == "admin" && pas.value == "12345") {
+                switch(log.value == "admin" && pas.value == "12345"){
+                    case true:
                     log.style.backgroundColor = "green";
-                    pas.style.backgroundColor = "green";
+                        pas.style.backgroundColor = "green";
+                        succes.style.display = "block"
+                        decline.style.display = "none"
+                    break;
 
-                    succes.style.display = "block"
+                    case false:
+                        log.style.backgroundColor = "red";
+                        pas.style.backgroundColor = "red";
+                        decline.style.display = "block"
+                    break;
                 }
-                else if(log.value != "admin" && pas.value == "12345"){
-                    log.style.backgroundColor = "red";
-                    pas.style.backgroundColor = "green";
 
-                    decline.style.display = "block"
-                }
-                else if(log.value == "admin" && pas.value != "12345"){
-                    log.style.backgroundColor = "green";
-                    pas.style.backgroundColor = "red";
+                // if(log.value != "admin" && pas.value != "12345"){
+                //     log.style.backgroundColor = "red";
+                //     pas.style.backgroundColor = "red";
+
+                //     decline.style.display = "block"
+                // }
+                // else if(log.value == "admin" && pas.value == "12345") {
+                //     log.style.backgroundColor = "green";
+                //     pas.style.backgroundColor = "green";
+
+                //     decline.style.display = "none"
+                //     succes.style.display = "block"
+                // }
+                // else if(log.value != "admin" && pas.value == "12345"){
+                //     log.style.backgroundColor = "red";
+                //     pas.style.backgroundColor = "green";
+
+                //     decline.style.display = "block"
+                // }
+                // else if(log.value == "admin" && pas.value != "12345"){
+                //     log.style.backgroundColor = "green";
+                //     pas.style.backgroundColor = "red";
                     
-                    decline.style.display = "block"
-                }                
+                //     decline.style.display = "block"
+                // }                
             }
         }
     </script>
